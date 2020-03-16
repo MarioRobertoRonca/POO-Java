@@ -1,6 +1,7 @@
 
 package br.edu.fatecfranca.ads.ex1;
 
+import java.util.Calendar;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
@@ -20,8 +21,12 @@ public class TestePassageiro {
        
        //Objeto todo
        Reserva objtodo = new Reserva();
+       //Data
+       Calendar d = Calendar.getInstance();
+       d.set(2001, 8, 11);
        objtodo.setCodigo(12345);
-       objtodo.setData(new Date());
+       objtodo.setData(d.getTime());
+       
        //Associação e Agregação 
        objtodo.setPassageiro(objparte1);
        objtodo.setVoo(objparte2);
@@ -34,7 +39,7 @@ public class TestePassageiro {
        int reserva = Integer.parseInt(JOptionPane.showInputDialog("Digite o Número da reserva: "));
       
       objtodo.setCodigo(reserva);
-      objtodo.setData(new Date());
+      d.set(2014, 3, 11);
       objtodo.getPassageiro().setNome(nome);
       objtodo.getPassageiro().setCpf(cpf);
       objtodo.getVoo().setNumero("111");
